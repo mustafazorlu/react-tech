@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { createContext } from "react";
+import "./App.css";
+import ComponentA from "./components/ComponentA";
+import ComponentC from "./components/ComponentC";
+import UserProfile from "./components/UserProfile";
+import { UserProvider } from "./context/UserContext";
+
+export const Data1 = createContext();
+export const Data2 = createContext();
 
 function App() {
-  const [count, setCount] = useState(0)
+    const name = "Mustafa";
+    const age = 25;
+    return (
+        <div>
+            <UserProvider value={name}>
+                <UserProfile />
+            </UserProvider>
+        </div>
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+        // 3:22:45 kaldik
+    );
 }
 
-export default App
+export default App;
