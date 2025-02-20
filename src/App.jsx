@@ -1,9 +1,8 @@
 import { createContext } from "react";
 import "./App.css";
-import ComponentA from "./components/ComponentA";
-import ComponentC from "./components/ComponentC";
 import UserProfile from "./components/UserProfile";
 import { UserProvider } from "./context/UserContext";
+import UpdateUser from "./components/UpdateUser";
 
 export const Data1 = createContext();
 export const Data2 = createContext();
@@ -13,8 +12,9 @@ function App() {
     const age = 25;
     return (
         <div>
-            <UserProvider value={name}>
+            <UserProvider>
                 <UserProfile />
+                <UpdateUser />
             </UserProvider>
         </div>
 
