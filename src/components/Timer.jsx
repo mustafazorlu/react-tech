@@ -24,6 +24,8 @@ const Timer = () => {
             </button>
         </div>
     );
+
+    // 3:53:00
 };
 
 export default Timer;
