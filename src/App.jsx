@@ -6,6 +6,8 @@ import { UserProvider } from "./context/UserContext";
 // import UpdateUser from "./components/UpdateUser";
 // import Counter from "./components/Counter";
 import { useRef } from "react";
+import useFetch from "./hooks/useFetch";
+import UniqueId from "./components/UniqueId";
 
 const initialState = { count: 0 };
 
@@ -25,12 +27,14 @@ const initialState = { count: 0 };
 function App() {
     // const [state, dispatch] = useReducer(reducer, initialState);
 
-    const inputElement = useRef();
+    // const inputElement = useRef();
 
-    const focusInput = () => {
-        inputElement.current.focus();
-        inputElement.current.value = "asddas";
-    };
+    // const focusInput = () => {
+    //     inputElement.current.focus();
+    //     inputElement.current.value = "asddas";
+    // };
+
+    // const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
 
     return (
         <div>
@@ -38,7 +42,14 @@ function App() {
                 {/* <UserProfile />
                 <UpdateUser /> */}
 
-                {/* <div
+                <UniqueId />
+
+                {/* {data &&
+                    data.map((item) => {
+                        return <p key={item.id}>{item.title}</p>;
+                    })} */}
+
+                {/* <div 
                     className=""
                     style={{ fontSize: "80px", fontFamily: "Segoe UI" }}
                 >
@@ -61,7 +72,9 @@ function App() {
                 <button onClick={() => focusInput()}>
                     focus input element
                 </button> */}
-                <Timer />
+                {/* <Timer />
+                
+                */}
             </UserProvider>
         </div>
 
